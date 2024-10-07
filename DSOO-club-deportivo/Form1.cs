@@ -10,6 +10,7 @@ namespace DiseñoLogin
         public Form1()
         {
             InitializeComponent();
+            btnIngresar.Select();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -71,10 +72,5 @@ namespace DiseñoLogin
             }
         }
 
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

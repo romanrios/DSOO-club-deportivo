@@ -25,7 +25,7 @@ namespace DiseñoLogin
             principal.Show();
             this.Hide();
         }
-       
+
 
         /* ===================================================
         * Limpiamos los objetos para un nuevo ingreso
@@ -80,5 +80,13 @@ namespace DiseñoLogin
             }
         }
 
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si la tecla presionada es un número o una tecla de control (como Backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Si no es un número, cancela la entrada
+            }
+        }
     }
 }

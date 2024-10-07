@@ -52,7 +52,7 @@
             btnSalir.Location = new Point(234, 255);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(178, 67);
-            btnSalir.TabIndex = 1;
+            btnSalir.TabIndex = 5;
             btnSalir.Text = "SALIR";
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
@@ -62,7 +62,7 @@
             btnRegistrarSocio.Location = new Point(36, 78);
             btnRegistrarSocio.Name = "btnRegistrarSocio";
             btnRegistrarSocio.Size = new Size(178, 67);
-            btnRegistrarSocio.TabIndex = 2;
+            btnRegistrarSocio.TabIndex = 0;
             btnRegistrarSocio.Text = "REGISTRAR SOCIO";
             btnRegistrarSocio.UseVisualStyleBackColor = true;
             btnRegistrarSocio.Click += btnRegistrarSocio_Click;
@@ -73,7 +73,7 @@
             btnRegistrarNoSocio.Location = new Point(234, 78);
             btnRegistrarNoSocio.Name = "btnRegistrarNoSocio";
             btnRegistrarNoSocio.Size = new Size(178, 67);
-            btnRegistrarNoSocio.TabIndex = 2;
+            btnRegistrarNoSocio.TabIndex = 1;
             btnRegistrarNoSocio.Text = "REGISTRAR NO SOCIO";
             btnRegistrarNoSocio.UseVisualStyleBackColor = false;
             btnRegistrarNoSocio.Click += button1_Click;
@@ -95,7 +95,7 @@
             btnListarVencimientosHoy.Location = new Point(234, 166);
             btnListarVencimientosHoy.Name = "btnListarVencimientosHoy";
             btnListarVencimientosHoy.Size = new Size(178, 67);
-            btnListarVencimientosHoy.TabIndex = 2;
+            btnListarVencimientosHoy.TabIndex = 3;
             btnListarVencimientosHoy.Text = "LISTAR VENCIMIENTOS HOY";
             btnListarVencimientosHoy.UseVisualStyleBackColor = false;
             btnListarVencimientosHoy.Click += button1_Click;
@@ -106,7 +106,7 @@
             btnEntregarCarnet.Location = new Point(36, 255);
             btnEntregarCarnet.Name = "btnEntregarCarnet";
             btnEntregarCarnet.Size = new Size(178, 67);
-            btnEntregarCarnet.TabIndex = 2;
+            btnEntregarCarnet.TabIndex = 4;
             btnEntregarCarnet.Text = "ENTREGAR CARNET";
             btnEntregarCarnet.UseVisualStyleBackColor = false;
             btnEntregarCarnet.Click += button1_Click;
@@ -124,6 +124,7 @@
             Controls.Add(btnSalir);
             Controls.Add(lblIngreso);
             Name = "frmPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menú Principal";
             ResumeLayout(false);
             PerformLayout();

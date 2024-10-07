@@ -61,14 +61,15 @@
             txtApellido.Location = new Point(351, 81);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(220, 23);
-            txtApellido.TabIndex = 0;
+            txtApellido.TabIndex = 1;
             // 
             // txtDNI
             // 
             txtDNI.Location = new Point(351, 125);
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(220, 23);
-            txtDNI.TabIndex = 0;
+            txtDNI.TabIndex = 2;
+            txtDNI.KeyPress += txtDNI_KeyPress;
             // 
             // cboEstado
             // 
@@ -79,7 +80,7 @@
             cboEstado.Location = new Point(351, 171);
             cboEstado.Name = "cboEstado";
             cboEstado.Size = new Size(220, 23);
-            cboEstado.TabIndex = 1;
+            cboEstado.TabIndex = 3;
             // 
             // lblNombre
             // 
@@ -133,7 +134,7 @@
             chkEntregoAptoFisico.Location = new Point(228, 327);
             chkEntregoAptoFisico.Name = "chkEntregoAptoFisico";
             chkEntregoAptoFisico.Size = new Size(129, 19);
-            chkEntregoAptoFisico.TabIndex = 4;
+            chkEntregoAptoFisico.TabIndex = 6;
             chkEntregoAptoFisico.Text = "Entregó Apto Físico";
             chkEntregoAptoFisico.UseVisualStyleBackColor = true;
             // 
@@ -142,7 +143,7 @@
             btnAceptar.Location = new Point(23, 376);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(167, 47);
-            btnAceptar.TabIndex = 5;
+            btnAceptar.TabIndex = 7;
             btnAceptar.Text = "ACEPTAR";
             btnAceptar.UseVisualStyleBackColor = true;
             btnAceptar.Click += btnAceptar_Click;
@@ -152,7 +153,7 @@
             btnLimpiar.Location = new Point(215, 376);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(167, 47);
-            btnLimpiar.TabIndex = 5;
+            btnLimpiar.TabIndex = 8;
             btnLimpiar.Text = "LIMPIAR";
             btnLimpiar.UseVisualStyleBackColor = true;
             btnLimpiar.Click += btnLimpiar_Click;
@@ -162,7 +163,7 @@
             btnVolver.Location = new Point(404, 376);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(167, 47);
-            btnVolver.TabIndex = 5;
+            btnVolver.TabIndex = 9;
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
@@ -181,7 +182,7 @@
             dtpFechaDeInscripcion.Location = new Point(351, 270);
             dtpFechaDeInscripcion.Name = "dtpFechaDeInscripcion";
             dtpFechaDeInscripcion.Size = new Size(220, 23);
-            dtpFechaDeInscripcion.TabIndex = 6;
+            dtpFechaDeInscripcion.TabIndex = 5;
             // 
             // lblFechaDeNacimiento
             // 
@@ -197,7 +198,7 @@
             dtpFechaDeNacimiento.Location = new Point(351, 223);
             dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
             dtpFechaDeNacimiento.Size = new Size(220, 23);
-            dtpFechaDeNacimiento.TabIndex = 6;
+            dtpFechaDeNacimiento.TabIndex = 4;
             // 
             // frmInscripcion
             // 
@@ -222,6 +223,7 @@
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Name = "frmInscripcion";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inscribir Socio";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
