@@ -23,6 +23,10 @@ namespace DiseñoLogin.Datos
                 comando.Parameters.Add("Ape", MySqlDbType.VarChar).Value = postu.ApellidoP;
                 comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = postu.TDocP;
                 comando.Parameters.Add("Doc", MySqlDbType.Int32).Value = postu.DocP;
+                comando.Parameters.Add("Fec", MySqlDbType.DateTime).Value = postu.FechaNac;
+                comando.Parameters.Add("FecI", MySqlDbType.DateTime).Value = postu.FechaInsc;
+                comando.Parameters.Add("EAF", MySqlDbType.Bit).Value = postu.EntregoAF;
+
                 MySqlParameter ParCodigo = new MySqlParameter();
                 ParCodigo.ParameterName = "rta";
                 ParCodigo.MySqlDbType = MySqlDbType.Int32;

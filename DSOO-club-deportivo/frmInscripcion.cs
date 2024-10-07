@@ -57,6 +57,10 @@ namespace DiseñoLogin
                 postu.ApellidoP = txtApellido.Text;
                 postu.DocP = Convert.ToInt32(txtDNI.Text);
                 postu.TDocP = cboEstado.Text;
+                postu.FechaNac = dtpFechaDeNacimiento.Value;
+                postu.FechaInsc = dtpFechaDeInscripcion.Value;
+                postu.EntregoAF = chkEntregoAptoFisico.Checked;
+
 
                 // instanciamos para usar el metodo dentro de postulantes
                 Datos.Postulantes postulantes = new Datos.Postulantes();

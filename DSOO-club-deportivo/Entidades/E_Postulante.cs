@@ -12,5 +12,11 @@ namespace DiseñoLogin.Entidades
         public string? ApellidoP { get; set; }
         public string? TDocP { get; set; }
         public int DocP { get; set; }
+        public DateTime? FechaNac { get; set; }
+        public DateTime? FechaInsc { get; set; }
+
+        public bool EntregoAF { get; set; }
+
+
     }
 }
