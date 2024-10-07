@@ -40,9 +40,8 @@
             txtUsuario.Size = new Size(163, 23);
             txtUsuario.TabIndex = 0;
             txtUsuario.Text = "USUARIO";
-            // Asociar eventos Enter y Leave al TextBox txtUsuario
-            txtUsuario.Enter += new EventHandler(this.txtUsuario_Enter);
-            txtUsuario.Leave += new EventHandler(this.txtUsuario_Leave);
+            txtUsuario.Enter += txtUsuario_Enter;
+            txtUsuario.Leave += txtUsuario_Leave;
             // 
             // txtPass
             // 
@@ -51,9 +50,8 @@
             txtPass.Size = new Size(163, 23);
             txtPass.TabIndex = 0;
             txtPass.Text = "CONTRASEÑA";
-            // Asociar eventos Enter y Leave al TextBox txtPass
-            txtPass.Enter += new EventHandler(this.txtPass_Enter);
-            txtPass.Leave += new EventHandler(this.txtPass_Leave);
+            txtPass.Enter += txtPass_Enter;
+            txtPass.Leave += txtPass_Leave;
             // 
             // btnIngresar
             // 
@@ -63,8 +61,7 @@
             btnIngresar.TabIndex = 1;
             btnIngresar.Text = "INGRESAR";
             btnIngresar.UseVisualStyleBackColor = true;
-            // Asociar evento Click al Button btnIngresar
-            btnIngresar.Click += new EventHandler(this.btnIngresar_Click);
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // Form1
             // 
@@ -75,7 +72,7 @@
             Controls.Add(txtPass);
             Controls.Add(txtUsuario);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Iniciar Sesión";
             ResumeLayout(false);
             PerformLayout();
         }

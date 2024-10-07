@@ -17,17 +17,12 @@ namespace DiseñoLogin.Datos
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConcexion();
-                MySqlCommand comando = new MySqlCommand("NuevoPos",
-                sqlCon);
+                MySqlCommand comando = new MySqlCommand("NuevoPos", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("Nom", MySqlDbType.VarChar).Value =
-                postu.NombreP;
-                comando.Parameters.Add("Ape", MySqlDbType.VarChar).Value =
-                postu.ApellidoP;
-                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value =
-                postu.TDocP;
-                comando.Parameters.Add("Doc", MySqlDbType.Int32).Value =
-                postu.DocP;
+                comando.Parameters.Add("Nom", MySqlDbType.VarChar).Value = postu.NombreP;
+                comando.Parameters.Add("Ape", MySqlDbType.VarChar).Value = postu.ApellidoP;
+                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = postu.TDocP;
+                comando.Parameters.Add("Doc", MySqlDbType.Int32).Value = postu.DocP;
                 MySqlParameter ParCodigo = new MySqlParameter();
                 ParCodigo.ParameterName = "rta";
                 ParCodigo.MySqlDbType = MySqlDbType.Int32;

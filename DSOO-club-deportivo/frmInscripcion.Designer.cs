@@ -166,7 +166,6 @@
             btnVolver.Text = "VOLVER";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
-
             // 
             // lblFechaDeInscripcion
             // 
@@ -223,7 +222,7 @@
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Name = "frmInscripcion";
-            Text = "frmInscripcion";
+            Text = "Inscribir Socio";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -231,33 +230,22 @@
 
         #endregion
 
-        private TextBox txtNombre;
-        private TextBox txtApellido;
-        private TextBox txtDocumento;
-        private ComboBox cboTipo;
+        private PictureBox pictureBox1;
         private Label lblNombre;
         private Label lblApellido;
         private Label lblDNI;
-        private PictureBox pictureBox1;
-        private Label label2;
-        private CheckBox checkBox1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Label label1;
-        private DateTimePicker dateTimePicker1;
-        private Button btnAceptar;
-        private Button btnLimpiar;
-        private Label label3;
-        private DateTimePicker dateTimePicker2;
+        private Label lblFechaDeInscripcion;
+        private Label lblFechaDeNacimiento;
+        private Label lblEstado;
+        private TextBox txtNombre;
+        private TextBox txtApellido;
         private TextBox txtDNI;
         private ComboBox cboEstado;
-        private Label lblEstado;
-        private Button btnVolver;
-        private Label lblFechaDeInscripcion;
         private DateTimePicker dtpFechaDeInscripcion;
-        private Label lblFechaDeNacimiento;
         private DateTimePicker dtpFechaDeNacimiento;
         private CheckBox chkEntregoAptoFisico;
+        private Button btnAceptar;
+        private Button btnLimpiar;
+        private Button btnVolver;
     }
 }

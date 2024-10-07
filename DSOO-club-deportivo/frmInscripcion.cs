@@ -55,8 +55,9 @@ namespace DiseñoLogin
                 E_Postulante postu = new E_Postulante();
                 postu.NombreP = txtNombre.Text;
                 postu.ApellidoP = txtApellido.Text;
-                postu.DocP = Convert.ToInt32(txtDocumento.Text);
-                postu.TDocP = cboTipo.Text;
+                postu.DocP = Convert.ToInt32(txtDNI.Text);
+                postu.TDocP = cboEstado.Text;
+
                 // instanciamos para usar el metodo dentro de postulantes
                 Datos.Postulantes postulantes = new Datos.Postulantes();
                 respuesta = postulantes.Nuevo_Postu(postu);

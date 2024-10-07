@@ -124,7 +124,7 @@
             Controls.Add(btnSalir);
             Controls.Add(lblIngreso);
             Name = "frmPrincipal";
-            Text = "frmPrincipal";
+            Text = "Menú Principal";
             ResumeLayout(false);
             PerformLayout();
         }
