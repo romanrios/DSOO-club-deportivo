@@ -40,45 +40,37 @@ namespace DiseñoLogin
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
-
         {
-            if (txtNombre.Text == "" || txtApellido.Text == "" ||
-            txtDNI.Text == "" || cboEstado.Text == "")
+            if (txtNombre.Text == "" || txtApellido.Text == "" || txtDNI.Text == "" || cboEstado.Text == "")
             {
-                MessageBox.Show("Debe completar datos requeridos (*) ",
-                "AVISO DEL SISTEMA", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar datos requeridos (*)", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 string respuesta;
-                E_Postulante postu = new E_Postulante();
-                postu.NombreP = txtNombre.Text;
-                postu.ApellidoP = txtApellido.Text;
-                postu.DocP = Convert.ToInt32(txtDNI.Text);
-                postu.TDocP = cboEstado.Text;
-                postu.FechaNac = dtpFechaDeNacimiento.Value;
-                postu.FechaInsc = dtpFechaDeInscripcion.Value;
-                postu.EntregoAF = chkEntregoAptoFisico.Checked;
+                E_Socio socio = new E_Socio();
+                socio.Nombre = txtNombre.Text;
+                socio.Apellido = txtApellido.Text;
+                socio.DNI = Convert.ToInt32(txtDNI.Text);
+                socio.Estado = cboEstado.Text;
+                socio.FechaNac = dtpFechaDeNacimiento.Value;
+                socio.FechaInsc = dtpFechaDeInscripcion.Value;
+                socio.EntregoAptoFisico = chkEntregoAptoFisico.Checked;
 
 
-                // instanciamos para usar el metodo dentro de postulantes
-                Datos.Postulantes postulantes = new Datos.Postulantes();
-                respuesta = postulantes.Nuevo_Postu(postu);
+
+                Datos.Socios datosSocios = new Datos.Socios();
+                respuesta = datosSocios.Nuevo_Socio(socio);
                 bool esnumero = int.TryParse(respuesta, out int codigo);
                 if (esnumero)
                 {
                     if (codigo == 1)
                     {
-                        MessageBox.Show("POSTULANTE YA EXISTE", "AVISO DEL SISTEMA",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        MessageBox.Show("SOCIO YA EXISTE", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("se almaceno con exito con el codigo Nro " + respuesta, "AVISO DEL SISTEMA",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Question);
+                        MessageBox.Show("Se almacenó con éxito con el código Nro " + respuesta, "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     }
                 }
             }

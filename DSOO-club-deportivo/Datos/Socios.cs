@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 namespace DiseñoLogin.Datos
 {
-    internal class Postulantes
+    internal class Socios
     {
-        public string Nuevo_Postu(E_Postulante postu)
+        public string Nuevo_Socio(E_Socio socio)
         {
             string? salida;
             MySqlConnection sqlCon = new MySqlConnection();
@@ -19,13 +19,13 @@ namespace DiseñoLogin.Datos
                 sqlCon = Conexion.getInstancia().CrearConcexion();
                 MySqlCommand comando = new MySqlCommand("NuevoPos", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Add("Nom", MySqlDbType.VarChar).Value = postu.NombreP;
-                comando.Parameters.Add("Ape", MySqlDbType.VarChar).Value = postu.ApellidoP;
-                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = postu.TDocP;
-                comando.Parameters.Add("Doc", MySqlDbType.Int32).Value = postu.DocP;
-                comando.Parameters.Add("Fec", MySqlDbType.DateTime).Value = postu.FechaNac;
-                comando.Parameters.Add("FecI", MySqlDbType.DateTime).Value = postu.FechaInsc;
-                comando.Parameters.Add("EAF", MySqlDbType.Bit).Value = postu.EntregoAF;
+                comando.Parameters.Add("Nom", MySqlDbType.VarChar).Value = socio.Nombre;
+                comando.Parameters.Add("Ape", MySqlDbType.VarChar).Value = socio.Apellido;
+                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = socio.Estado;
+                comando.Parameters.Add("Doc", MySqlDbType.Int32).Value = socio.DNI;
+                comando.Parameters.Add("Fec", MySqlDbType.DateTime).Value = socio.FechaNac;
+                comando.Parameters.Add("FecI", MySqlDbType.DateTime).Value = socio.FechaInsc;
+                comando.Parameters.Add("EAF", MySqlDbType.Bit).Value = socio.EntregoAptoFisico;
 
                 MySqlParameter ParCodigo = new MySqlParameter();
                 ParCodigo.ParameterName = "rta";
@@ -50,3 +50,4 @@ namespace DiseñoLogin.Datos
         }
     }
 }
+
