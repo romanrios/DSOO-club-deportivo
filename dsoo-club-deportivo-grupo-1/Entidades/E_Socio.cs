@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiseñoLogin.Entidades
+namespace ClubDeportivo.Entidades
 {
     public class E_Socio : E_Cliente
     {

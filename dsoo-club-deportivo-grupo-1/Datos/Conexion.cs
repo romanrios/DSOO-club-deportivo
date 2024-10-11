@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 // --------------------
 // Referencia a MySQL (se agrega como libreria)
 using MySql.Data.MySqlClient;
-namespace DiseñoLogin.Datos
+namespace ClubDeportivo.Datos
 {
     public class Conexion // la clase debe ser PUBLICA
     {

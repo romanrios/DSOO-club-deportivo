@@ -1,4 +1,4 @@
-namespace DiseñoLogin
+namespace ClubDeportivo
 {
     internal static class Program
     {

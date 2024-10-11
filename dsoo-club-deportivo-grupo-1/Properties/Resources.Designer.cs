@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DiseñoLogin.Properties {
+namespace ClubDeportivo.Properties {
     using System;
     
     

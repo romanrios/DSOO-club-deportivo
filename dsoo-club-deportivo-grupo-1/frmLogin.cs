@@ -1,9 +1,9 @@
-﻿using DiseñoLogin.Datos;
+﻿using ClubDeportivo.Datos;
 using Org.BouncyCastle.Pqc.Crypto.Lms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 using System.Data;
-namespace DiseñoLogin
+namespace ClubDeportivo
 {
     public partial class frmLogin : Form
     {

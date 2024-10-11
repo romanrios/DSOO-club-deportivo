@@ -1,4 +1,4 @@
-﻿using DiseñoLogin.Entidades;
+﻿using ClubDeportivo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace DiseñoLogin
+namespace ClubDeportivo
 {
     public partial class frmInscripcion : Form
     {

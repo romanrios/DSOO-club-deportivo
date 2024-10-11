@@ -1,4 +1,4 @@
-﻿namespace DiseñoLogin
+﻿namespace ClubDeportivo
 {
     partial class frmPrincipal
     {

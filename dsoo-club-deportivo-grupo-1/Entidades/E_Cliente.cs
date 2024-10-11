@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace DiseñoLogin.Entidades
+namespace ClubDeportivo.Entidades
 {
     public class E_Cliente
     {
