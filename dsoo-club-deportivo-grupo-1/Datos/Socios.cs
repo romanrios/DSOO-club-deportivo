@@ -16,8 +16,8 @@ namespace DiseñoLogin.Datos
             MySqlConnection sqlCon = new MySqlConnection();
             try
             {
-                sqlCon = Conexion.getInstancia().CrearConcexion();
-                MySqlCommand comando = new MySqlCommand("NuevoPos", sqlCon);
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                MySqlCommand comando = new MySqlCommand("NuevoSocio", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Add("Nom", MySqlDbType.VarChar).Value = socio.Nombre;
                 comando.Parameters.Add("Ape", MySqlDbType.VarChar).Value = socio.Apellido;

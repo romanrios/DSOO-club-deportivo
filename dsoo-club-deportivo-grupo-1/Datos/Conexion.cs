@@ -20,14 +20,14 @@ namespace DiseñoLogin.Datos
         private static Conexion? con = null;
         private Conexion() // asignamos valores a las variables de la conexion
 {
-this.baseDatos = "instituto";
+this.baseDatos = "dsoo-club-deportivo-grupo-1";
 this.servidor = "localhost";
 this.puerto = "3306";
 this.usuario = "root";
 this.clave = "root";
 }
     // proceso de interacción
-    public MySqlConnection CrearConcexion()
+    public MySqlConnection CrearConexion()
     {
         // instanciamos una conexion
         MySqlConnection? cadena = new MySqlConnection();

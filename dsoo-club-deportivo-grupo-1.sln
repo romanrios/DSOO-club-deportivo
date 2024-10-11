@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiseñoLogin", "DSOO-club-deportivo\DiseñoLogin.csproj", "{42EBFF54-9841-4919-9A11-BE4DBF9D9D60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dsoo-club-deportivo-grupo-1", "dsoo-club-deportivo-grupo-1\dsoo-club-deportivo-grupo-1.csproj", "{42EBFF54-9841-4919-9A11-BE4DBF9D9D60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
