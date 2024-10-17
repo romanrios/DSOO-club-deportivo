@@ -39,9 +39,11 @@ namespace ClubDeportivo
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPagoCuota_Click(object sender, EventArgs e)
         {
-
+            frmPagar frmPagar = new frmPagar();
+            frmPagar.Show();
+            this.Hide();
         }
 
     }

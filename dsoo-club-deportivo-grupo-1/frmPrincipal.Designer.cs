@@ -76,18 +76,17 @@
             btnRegistrarNoSocio.TabIndex = 1;
             btnRegistrarNoSocio.Text = "REGISTRAR NO SOCIO";
             btnRegistrarNoSocio.UseVisualStyleBackColor = false;
-            btnRegistrarNoSocio.Click += button1_Click;
             // 
             // btnPagoCuota
             // 
-            btnPagoCuota.BackColor = SystemColors.ControlDark;
+            btnPagoCuota.BackColor = SystemColors.ControlLight;
             btnPagoCuota.Location = new Point(36, 166);
             btnPagoCuota.Name = "btnPagoCuota";
             btnPagoCuota.Size = new Size(178, 67);
             btnPagoCuota.TabIndex = 2;
             btnPagoCuota.Text = "PAGO CUOTA";
             btnPagoCuota.UseVisualStyleBackColor = false;
-            btnPagoCuota.Click += button1_Click;
+            btnPagoCuota.Click += btnPagoCuota_Click;
             // 
             // btnListarVencimientosHoy
             // 
@@ -98,7 +97,6 @@
             btnListarVencimientosHoy.TabIndex = 3;
             btnListarVencimientosHoy.Text = "LISTAR VENCIMIENTOS HOY";
             btnListarVencimientosHoy.UseVisualStyleBackColor = false;
-            btnListarVencimientosHoy.Click += button1_Click;
             // 
             // btnEntregarCarnet
             // 
@@ -109,7 +107,6 @@
             btnEntregarCarnet.TabIndex = 4;
             btnEntregarCarnet.Text = "ENTREGAR CARNET";
             btnEntregarCarnet.UseVisualStyleBackColor = false;
-            btnEntregarCarnet.Click += button1_Click;
             // 
             // frmPrincipal
             // 
