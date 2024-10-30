@@ -134,9 +134,9 @@
             lblCurso.AutoSize = true;
             lblCurso.Location = new Point(176, 61);
             lblCurso.Name = "lblCurso";
-            lblCurso.Size = new Size(46, 15);
+            lblCurso.Size = new Size(35, 15);
             lblCurso.TabIndex = 0;
-            lblCurso.Text = "[Curso]";
+            lblCurso.Text = "[DNI]";
             // 
             // lblValor
             // 
@@ -188,18 +188,18 @@
             label7.AutoSize = true;
             label7.Location = new Point(23, 95);
             label7.Name = "label7";
-            label7.Size = new Size(114, 15);
+            label7.Size = new Size(118, 15);
             label7.TabIndex = 0;
-            label7.Text = "Fecha de Comienzo:";
+            label7.Text = "Fecha de Inscripción:";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(23, 61);
             label5.Name = "label5";
-            label5.Size = new Size(128, 15);
+            label5.Size = new Size(30, 15);
             label5.TabIndex = 0;
-            label5.Text = "Se Inscribe en el Curso:";
+            label5.Text = "DNI:";
             // 
             // lblSocio
             // 

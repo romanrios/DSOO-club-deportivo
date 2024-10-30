@@ -26,6 +26,7 @@ namespace ClubDeportivo.Datos
             this.usuario = "root";
             this.clave = "root";
 
+
         }
         // proceso de interacción
         public MySqlConnection CrearConexion()

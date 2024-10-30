@@ -31,11 +31,63 @@ namespace ClubDeportivo
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrWhiteSpace(txtNro.Text))
+            {
+                MessageBox.Show("Debe seleccionar un N° de Socio", "AVISO DEL SISTEMA",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
+
+            if (!rbtEfectivo.Checked && !rbtTarjeta.Checked)
+            {
+                MessageBox.Show("Debe seleccionar una forma de pago", "AVISO DEL SISTEMA",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
+
             MySqlConnection sqlCon = new MySqlConnection();
             try
-            {
-                string query;
+            {  
                 sqlCon = Conexion.getInstancia().CrearConexion();
+                sqlCon.Open();
+
+
+
+
+
+                // Validación para verificar si el pago ya fue realizado este mes
+                string consultaValidacion = @"SELECT COUNT(*) FROM cuota 
+                                      WHERE idSocio = @idSocio 
+                                      AND MONTH(fechaPago) = @mes 
+                                      AND YEAR(fechaPago) = @anio";
+
+                MySqlCommand cmdValidacion = new MySqlCommand(consultaValidacion, sqlCon);
+                cmdValidacion.Parameters.AddWithValue("@idSocio", Convert.ToInt32(txtNro.Text));
+                cmdValidacion.Parameters.AddWithValue("@mes", DateTime.Now.Month);
+                cmdValidacion.Parameters.AddWithValue("@anio", DateTime.Now.Year);
+
+                int pagosEsteMes = Convert.ToInt32(cmdValidacion.ExecuteScalar());
+
+                if (pagosEsteMes > 0)
+                {
+                    MessageBox.Show("Cuota ya abonada este mes", "AVISO DEL SISTEMA",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+
+
+
+
+
+
+
+
+
                 /*
                 --------------------------------------------------------
                 Consulta simple que proyecta los datos necesarios
@@ -54,18 +106,17 @@ namespace ClubDeportivo
 
 
 
-                query = ("select NSocio, concat(NombreP, ' ', ApellidoP), DocP, FechaInsc " +
+                string query = ("select NSocio, concat(NombreS, ' ', ApellidoS), DocS, FechaInsc " +
                         "from socio " +
                         "where NSocio = " + txtNro.Text);
 
 
                 MySqlCommand comando = new MySqlCommand(query, sqlCon);
                 comando.CommandType = CommandType.Text;
-                sqlCon.Open();
 
                 MySqlDataReader reader = comando.ExecuteReader();
 
-                if (reader.HasRows)
+                 if (reader.HasRows)
                 {
                     reader.Read(); // Sabemos que es solo una fila
 
@@ -94,6 +145,10 @@ namespace ClubDeportivo
                     }
 
                     btnComprobante.Enabled = true;
+
+                    // Crear el objeto Cuota y registrar el pago
+                    Cuota cuota = new Cuota();
+                    string resultado = cuota.RegistrarPago(doc.numero_f, doc.monto_f, DateTime.Now);
 
 
                     MessageBox.Show("Pago exitoso", "AVISO DEL SISTEMA",
