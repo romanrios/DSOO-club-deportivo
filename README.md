@@ -1,6 +1,8 @@
 # DSOO - Club Deportivo
 
-**Proyecto Integrador** de la materia **Desarrollo de Sistemas Orientados a Objetos**. Sistema de gestión de un club deportivo.
+Instituo de Formación Técnica Superior Nº 29
+
+**Proyecto Integrador - Desarrollo de Software Orientado a Objetos**
 
 ## Grupo N° 1:
  
@@ -9,6 +11,15 @@
 - Gómez, Cecilia Daniela
 - Lucchelli, Eugenia
 - Ríos, Román
+
+## Descripción
+
+Este trabajo tiene como objetivo analizar el funcionamiento de un club deportivo para luego desarrollar un sistema de gestión integral en C# utilizando Visual Studio. El sistema buscará optimizar la administración de clientes y el registro de pagos.
+
+A través de esta práctica, se abordarán conceptos fundamentales de la programación orientada a objetos, permitiendo identificar las clases, atributos y relaciones clave dentro del dominio del problema. Este análisis no solo sienta las bases para el desarrollo del proyecto integrador, sino que también fomenta habilidades de documentación y planificación, esenciales para enfrentar los desafíos de un proyecto real.
+
+Con este enfoque, se busca no solo cumplir con los requerimientos académicos, sino también simular el proceso profesional de creación de un sistema que responda a necesidades específicas de un cliente.
+
 
 ## Especificaciones
 - .NET versión 8.0
