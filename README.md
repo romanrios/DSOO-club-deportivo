@@ -1,10 +1,10 @@
 # DSOO - Club Deportivo
 
-Instituo de Formación Técnica Superior Nº 29
+Instituto de Formación Técnica Superior Nº 29 - Año 2024
 
 **Proyecto Integrador - Desarrollo de Software Orientado a Objetos**
 
-## Grupo N° 1:
+## Comisión A - Grupo N° 1:
  
 - Córdoba, Daniel Ignacio
 - Gimenez, Mariela Belén
