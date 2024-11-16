@@ -5,9 +5,8 @@ using Microsoft.VisualBasic;
 
 namespace ClubDeportivo.Datos
 {
-    public class Conexion // La clase debe ser pública
+    public class Conexion
     {
-        // Declaración de variables
         private string baseDatos;
         private string servidor;
         private string puerto;
@@ -15,30 +14,26 @@ namespace ClubDeportivo.Datos
         private string clave;
         private static Conexion? con = null;
 
-        private Conexion() // Asignamos valores a las variables de la conexión
+        private Conexion()
         {
-            // Asigna el nombre de la base de datos
             this.baseDatos = "dsoo-club-deportivo-grupo-1";
             bool correcto = false;
 
             while (!correcto)
             {
-                // Solicitar al usuario los datos de conexión, con valores predeterminados
                 servidor = Interaction.InputBox("Ingrese servidor", "Datos de instalación MySQL", "localhost");
                 puerto = Interaction.InputBox("Ingrese puerto", "Datos de instalación MySQL", "3306");
                 usuario = Interaction.InputBox("Ingrese usuario", "Datos de instalación MySQL", "root");
                 clave = Interaction.InputBox("Ingrese clave", "Datos de instalación MySQL", "");
 
-                // Si el usuario cancela alguno de los cuadros de diálogo, salir del ciclo
                 if (string.IsNullOrEmpty(servidor) || string.IsNullOrEmpty(puerto) ||
                     string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(clave))
                 {
                     MessageBox.Show("No se ingresaron todos los datos necesarios. El programa se cerrará.", "Aviso",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Environment.Exit(0); // Cierra el programa
+                    Environment.Exit(0);
                 }
 
-                // Confirmar los datos ingresados
                 var mensaje = MessageBox.Show($"Servidor: {servidor}\nPuerto: {puerto}\nUsuario: {usuario}\nClave: {clave}",
                     "¿Son correctos estos datos?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -53,7 +48,6 @@ namespace ClubDeportivo.Datos
             }
         }
 
-        // Proceso de conexión
         public MySqlConnection CrearConexion()
         {
             MySqlConnection? cadena = new MySqlConnection();
@@ -64,22 +58,49 @@ namespace ClubDeportivo.Datos
                                           ";username=" + this.usuario +
                                           ";password=" + this.clave +
                                           ";Database=" + this.baseDatos;
+
+                // Intentamos abrir la conexión para verificar que los datos son correctos
+                cadena.Open();
+            }
+            catch (MySqlException ex)
+            {
+                // Especificar el error que ocurrió en la conexión
+                string mensajeError = "Hubo un error al intentar conectarse a la Base de Datos. Detalle del error: ";
+                switch (ex.Number)
+                {
+                    case 1042: // Error de host desconocido
+                        mensajeError += "No se pudo encontrar el servidor especificado.";
+                        break;
+                    case 1045: // Error de autenticación
+                        mensajeError += "Credenciales incorrectas (usuario o contraseña).";
+                        break;
+                    case 0: // Error de conexión (servidor no disponible)
+                        mensajeError += "El servidor no está disponible o no puede ser alcanzado.";
+                        break;
+                    default:
+                        mensajeError += ex.Message;
+                        break;
+                }
+
+                MessageBox.Show(mensajeError, "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cadena = null; // En caso de error, la conexión no se establece
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al crear la conexión: {ex.Message}", "Error",
+                // Manejar cualquier otro tipo de error que no sea específico de MySQL
+                MessageBox.Show($"Hubo un error inesperado: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cadena = null;
             }
+
             return cadena;
         }
 
-        // Método para evaluar la instancia de la conexión
         public static Conexion getInstancia()
         {
-            if (con == null) // Verifica si la conexión está cerrada
+            if (con == null)
             {
-                con = new Conexion(); // Crea una nueva instancia
+                con = new Conexion();
             }
             return con;
         }
