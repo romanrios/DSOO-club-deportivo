@@ -1,6 +1,6 @@
 ﻿namespace ClubDeportivo
 {
-    partial class frmInscripcion
+    partial class frmInscripcionNS
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInscripcion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInscripcionNS));
             txtNombre = new TextBox();
             txtApellido = new TextBox();
             txtDNI = new TextBox();
-            cboEstado = new ComboBox();
             lblNombre = new Label();
             lblApellido = new Label();
             lblDNI = new Label();
             pictureBox1 = new PictureBox();
-            lblEstado = new Label();
             chkEntregoAptoFisico = new CheckBox();
             btnAceptar = new Button();
             btnLimpiar = new Button();
@@ -73,17 +71,6 @@
             txtDNI.Size = new Size(220, 23);
             txtDNI.TabIndex = 2;
             txtDNI.KeyPress += txtDNI_KeyPress;
-            // 
-            // cboEstado
-            // 
-            cboEstado.AutoCompleteCustomSource.AddRange(new string[] { "Activo", "Inactivo" });
-            cboEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboEstado.FormattingEnabled = true;
-            cboEstado.Items.AddRange(new object[] { "Activo", "Inactivo" });
-            cboEstado.Location = new Point(351, 171);
-            cboEstado.Name = "cboEstado";
-            cboEstado.Size = new Size(220, 23);
-            cboEstado.TabIndex = 3;
             // 
             // lblNombre
             // 
@@ -122,19 +109,10 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
-            // lblEstado
-            // 
-            lblEstado.AutoSize = true;
-            lblEstado.Location = new Point(228, 174);
-            lblEstado.Name = "lblEstado";
-            lblEstado.Size = new Size(42, 15);
-            lblEstado.TabIndex = 2;
-            lblEstado.Text = "Estado";
-            // 
             // chkEntregoAptoFisico
             // 
             chkEntregoAptoFisico.AutoSize = true;
-            chkEntregoAptoFisico.Location = new Point(228, 327);
+            chkEntregoAptoFisico.Location = new Point(228, 281);
             chkEntregoAptoFisico.Name = "chkEntregoAptoFisico";
             chkEntregoAptoFisico.Size = new Size(129, 19);
             chkEntregoAptoFisico.TabIndex = 6;
@@ -143,7 +121,7 @@
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(23, 376);
+            btnAceptar.Location = new Point(23, 327);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(167, 47);
             btnAceptar.TabIndex = 7;
@@ -153,7 +131,7 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(215, 376);
+            btnLimpiar.Location = new Point(215, 327);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(167, 47);
             btnLimpiar.TabIndex = 8;
@@ -163,7 +141,7 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(404, 376);
+            btnVolver.Location = new Point(404, 327);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(167, 47);
             btnVolver.TabIndex = 9;
@@ -174,7 +152,7 @@
             // lblFechaDeInscripcion
             // 
             lblFechaDeInscripcion.AutoSize = true;
-            lblFechaDeInscripcion.Location = new Point(228, 276);
+            lblFechaDeInscripcion.Location = new Point(228, 230);
             lblFechaDeInscripcion.Name = "lblFechaDeInscripcion";
             lblFechaDeInscripcion.Size = new Size(115, 15);
             lblFechaDeInscripcion.TabIndex = 2;
@@ -182,18 +160,15 @@
             // 
             // dtpFechaDeInscripcion
             // 
-            dtpFechaDeInscripcion.Location = new Point(351, 270);
-            dtpFechaDeInscripcion.MaxDate = new DateTime(9998, 1, 1, 0, 0, 0, 0);
-            dtpFechaDeInscripcion.MinDate = new DateTime(1800, 1, 1, 0, 0, 0, 0);
+            dtpFechaDeInscripcion.Location = new Point(351, 224);
             dtpFechaDeInscripcion.Name = "dtpFechaDeInscripcion";
             dtpFechaDeInscripcion.Size = new Size(220, 23);
             dtpFechaDeInscripcion.TabIndex = 5;
-            dtpFechaDeInscripcion.Value = new DateTime(2024, 11, 13, 0, 0, 0, 0);
             // 
             // lblFechaDeNacimiento
             // 
             lblFechaDeNacimiento.AutoSize = true;
-            lblFechaDeNacimiento.Location = new Point(228, 229);
+            lblFechaDeNacimiento.Location = new Point(228, 183);
             lblFechaDeNacimiento.Name = "lblFechaDeNacimiento";
             lblFechaDeNacimiento.Size = new Size(119, 15);
             lblFechaDeNacimiento.TabIndex = 2;
@@ -201,16 +176,16 @@
             // 
             // dtpFechaDeNacimiento
             // 
-            dtpFechaDeNacimiento.Location = new Point(351, 223);
+            dtpFechaDeNacimiento.Location = new Point(351, 177);
             dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
             dtpFechaDeNacimiento.Size = new Size(220, 23);
             dtpFechaDeNacimiento.TabIndex = 4;
             // 
-            // frmInscripcion
+            // frmInscripcionNS
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(606, 449);
+            ClientSize = new Size(606, 404);
             Controls.Add(dtpFechaDeNacimiento);
             Controls.Add(dtpFechaDeInscripcion);
             Controls.Add(btnVolver);
@@ -220,18 +195,16 @@
             Controls.Add(pictureBox1);
             Controls.Add(lblFechaDeNacimiento);
             Controls.Add(lblFechaDeInscripcion);
-            Controls.Add(lblEstado);
             Controls.Add(lblDNI);
             Controls.Add(lblApellido);
             Controls.Add(lblNombre);
-            Controls.Add(cboEstado);
             Controls.Add(txtDNI);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
-            Name = "frmInscripcion";
+            Name = "frmInscripcionNS";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Inscribir Socio";
-            Load += frmInscripcion_Load;
+            Text = "Inscribir No Socio";
+            Load += frmInscripcionNS_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -245,11 +218,9 @@
         private Label lblDNI;
         private Label lblFechaDeInscripcion;
         private Label lblFechaDeNacimiento;
-        private Label lblEstado;
         private TextBox txtNombre;
         private TextBox txtApellido;
         private TextBox txtDNI;
-        private ComboBox cboEstado;
         private DateTimePicker dtpFechaDeInscripcion;
         private DateTimePicker dtpFechaDeNacimiento;
         private CheckBox chkEntregoAptoFisico;

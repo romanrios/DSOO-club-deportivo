@@ -82,6 +82,7 @@
             // txtNro
             // 
             txtNro.Location = new Point(48, 52);
+            txtNro.MaxLength = 4;
             txtNro.Name = "txtNro";
             txtNro.Size = new Size(137, 23);
             txtNro.TabIndex = 2;

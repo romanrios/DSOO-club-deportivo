@@ -59,23 +59,25 @@
             // 
             // btnRegistrarSocio
             // 
+            btnRegistrarSocio.BackColor = SystemColors.ControlLight;
             btnRegistrarSocio.Location = new Point(36, 78);
             btnRegistrarSocio.Name = "btnRegistrarSocio";
             btnRegistrarSocio.Size = new Size(178, 67);
             btnRegistrarSocio.TabIndex = 0;
             btnRegistrarSocio.Text = "REGISTRAR SOCIO";
-            btnRegistrarSocio.UseVisualStyleBackColor = true;
+            btnRegistrarSocio.UseVisualStyleBackColor = false;
             btnRegistrarSocio.Click += btnRegistrarSocio_Click;
             // 
             // btnRegistrarNoSocio
             // 
-            btnRegistrarNoSocio.BackColor = SystemColors.ControlDark;
+            btnRegistrarNoSocio.BackColor = SystemColors.ControlLight;
             btnRegistrarNoSocio.Location = new Point(234, 78);
             btnRegistrarNoSocio.Name = "btnRegistrarNoSocio";
             btnRegistrarNoSocio.Size = new Size(178, 67);
             btnRegistrarNoSocio.TabIndex = 1;
             btnRegistrarNoSocio.Text = "REGISTRAR NO SOCIO";
             btnRegistrarNoSocio.UseVisualStyleBackColor = false;
+            btnRegistrarNoSocio.Click += btnRegistrarNoSocio_Click;
             // 
             // btnPagoCuota
             // 
@@ -90,23 +92,25 @@
             // 
             // btnListarVencimientosHoy
             // 
-            btnListarVencimientosHoy.BackColor = SystemColors.ControlDark;
+            btnListarVencimientosHoy.BackColor = SystemColors.ControlLight;
             btnListarVencimientosHoy.Location = new Point(234, 166);
             btnListarVencimientosHoy.Name = "btnListarVencimientosHoy";
             btnListarVencimientosHoy.Size = new Size(178, 67);
             btnListarVencimientosHoy.TabIndex = 3;
             btnListarVencimientosHoy.Text = "LISTAR VENCIMIENTOS HOY";
             btnListarVencimientosHoy.UseVisualStyleBackColor = false;
+            btnListarVencimientosHoy.Click += btnListarVencimientosHoy_Click;
             // 
             // btnEntregarCarnet
             // 
-            btnEntregarCarnet.BackColor = SystemColors.ControlDark;
+            btnEntregarCarnet.BackColor = SystemColors.ControlLight;
             btnEntregarCarnet.Location = new Point(36, 255);
             btnEntregarCarnet.Name = "btnEntregarCarnet";
             btnEntregarCarnet.Size = new Size(178, 67);
             btnEntregarCarnet.TabIndex = 4;
             btnEntregarCarnet.Text = "ENTREGAR CARNET";
             btnEntregarCarnet.UseVisualStyleBackColor = false;
+            btnEntregarCarnet.Click += btnEntregarCarnet_Click;
             // 
             // frmPrincipal
             // 

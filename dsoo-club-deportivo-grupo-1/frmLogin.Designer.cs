@@ -39,6 +39,7 @@
             // txtUsuario
             // 
             txtUsuario.Location = new Point(50, 140);
+            txtUsuario.MaxLength = 40;
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(163, 23);
             txtUsuario.TabIndex = 0;
@@ -49,6 +50,7 @@
             // txtPass
             // 
             txtPass.Location = new Point(50, 200);
+            txtPass.MaxLength = 40;
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(163, 23);
             txtPass.TabIndex = 1;
@@ -76,7 +78,7 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
-            // Form1
+            // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -85,7 +87,7 @@
             Controls.Add(btnIngresar);
             Controls.Add(txtPass);
             Controls.Add(txtUsuario);
-            Name = "Form1";
+            Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Iniciar Sesión";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

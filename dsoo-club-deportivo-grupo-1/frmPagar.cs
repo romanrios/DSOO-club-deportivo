@@ -31,12 +31,11 @@ namespace ClubDeportivo
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrWhiteSpace(txtNro.Text))
             {
                 MessageBox.Show("Debe seleccionar un N° de Socio", "AVISO DEL SISTEMA",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
 
             if (!rbtEfectivo.Checked && !rbtTarjeta.Checked)
@@ -46,98 +45,58 @@ namespace ClubDeportivo
                 return;
             }
 
-
-
-
             MySqlConnection sqlCon = new MySqlConnection();
             try
-            {  
+            {
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 sqlCon.Open();
 
+                // Consulta para obtener la fecha de vencimiento más reciente de las cuotas del socio
+                string consultaFechaVencimiento = @"SELECT MAX(c.fechaVencimiento) 
+                                                    FROM cuota c 
+                                                    WHERE c.idSocio = @idSocio";
 
+                MySqlCommand cmdFechaVencimiento = new MySqlCommand(consultaFechaVencimiento, sqlCon);
+                cmdFechaVencimiento.Parameters.AddWithValue("@idSocio", Convert.ToInt32(txtNro.Text));
 
+                object? resultFechaVencimiento = cmdFechaVencimiento.ExecuteScalar();
 
-
-                // Validación para verificar si el pago ya fue realizado este mes
-                string consultaValidacion = @"SELECT COUNT(*) FROM cuota 
-                                      WHERE idSocio = @idSocio 
-                                      AND MONTH(fechaPago) = @mes 
-                                      AND YEAR(fechaPago) = @anio";
-
-                MySqlCommand cmdValidacion = new MySqlCommand(consultaValidacion, sqlCon);
-                cmdValidacion.Parameters.AddWithValue("@idSocio", Convert.ToInt32(txtNro.Text));
-                cmdValidacion.Parameters.AddWithValue("@mes", DateTime.Now.Month);
-                cmdValidacion.Parameters.AddWithValue("@anio", DateTime.Now.Year);
-
-                int pagosEsteMes = Convert.ToInt32(cmdValidacion.ExecuteScalar());
-
-                if (pagosEsteMes > 0)
+                if (resultFechaVencimiento != DBNull.Value && resultFechaVencimiento != null)
                 {
-                    MessageBox.Show("Cuota ya abonada este mes", "AVISO DEL SISTEMA",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    DateTime fechaVencimientoUltimaCuota = Convert.ToDateTime(resultFechaVencimiento);
+
+                    // Comprobamos si la fecha de vencimiento más reciente es posterior a la fecha actual
+                    if (fechaVencimientoUltimaCuota > DateTime.Now)
+                    {
+                        MessageBox.Show("Cuota ya abonada este mes", "AVISO DEL SISTEMA",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                 }
 
-
-
-
-
-
-
-
-
-
-                /*
-                --------------------------------------------------------
-                Consulta simple que proyecta los datos necesarios
-                para rellenar el documento.
-                En este caso se trata del comprobante de pago del curso.
-                --------------------------------------------------------
-                */
-
-                //query = ("select idinscri, nombre, concat(nombrep, ' ', apellidop), precio, e.fecha " +
-                //        "from inscripcion i " +
-                //        "inner join edicion e on i.idEdicion = e.idEdicion " +
-                //        "inner join curso c on c.ncurso = e.ncurso " +
-                //        "inner join alumno a on a.legajo = i.legajo " +
-                //        "inner join socio p on p.NSocio = a.NSocio " +
-                //        "where idinscri = " + txtNro.Text);
-
-
-
-                string query = ("select NSocio, concat(NombreS, ' ', ApellidoS), DocS, FechaInsc " +
-                        "from socio " +
-                        "where NSocio = " + txtNro.Text);
-
+                // Consulta para obtener los datos del socio
+                string query = @"SELECT NSocio, CONCAT(NombreS, ' ', ApellidoS), DocS, FechaInsc 
+                                 FROM socio 
+                                 WHERE NSocio = @idSocio";
 
                 MySqlCommand comando = new MySqlCommand(query, sqlCon);
-                comando.CommandType = CommandType.Text;
-
+                comando.Parameters.AddWithValue("@idSocio", Convert.ToInt32(txtNro.Text));
                 MySqlDataReader reader = comando.ExecuteReader();
 
-                 if (reader.HasRows)
+                if (reader.HasRows)
                 {
-                    reader.Read(); // Sabemos que es solo una fila
-
-                    //doc.numero_f = Convert.ToInt32(reader.GetString(0));
-                    //doc.curso_f = reader.GetString(1);
-                    //doc.socio_f = reader.GetString(2);
-                    //doc.monto_f = (float)Convert.ToDouble(reader.GetString(3));
-                    //doc.fecha_f = (DateTime)Convert.ToDateTime(reader.GetString(4));
+                    reader.Read();
 
                     doc.numero_f = reader.GetInt32(0);
-                    doc.socio_f = Convert.ToString(reader.GetString(1));
-                    doc.curso_f = Convert.ToString(reader.GetInt32(2));
+                    doc.socio_f = reader.GetString(1);
+                    doc.curso_f = reader.GetInt32(2).ToString();
                     doc.fecha_f = reader.GetDateTime(3);
                     doc.monto_f = 25000;
 
-
-                    if (rbtEfectivo.Checked == true) // Evaluamos la opción seleccionada
+                    if (rbtEfectivo.Checked)
                     {
                         doc.forma_f = "Efectivo";
-                        // Pago en efectivo se descuenta 10%
-                        doc.monto_f = (float)(doc.monto_f * 0.90);
+                        doc.monto_f *= 0.90f; // Descuento del 10% para efectivo
                     }
                     else
                     {
@@ -148,10 +107,9 @@ namespace ClubDeportivo
 
                     // Crear el objeto Cuota y registrar el pago
                     Cuota cuota = new Cuota();
-                    string resultado = cuota.RegistrarPago(doc.numero_f, doc.monto_f, DateTime.Now);
+                    string resultado = cuota.RegistrarPago(doc.numero_f, doc.monto_f, DateTime.Now, doc.forma_f);
 
-
-                    MessageBox.Show("Pago exitoso", "AVISO DEL SISTEMA",
+                    MessageBox.Show(resultado, "AVISO DEL SISTEMA",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

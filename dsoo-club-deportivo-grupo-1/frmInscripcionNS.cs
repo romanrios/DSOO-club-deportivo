@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace ClubDeportivo
 {
-    public partial class frmInscripcion : Form
+    public partial class frmInscripcionNS : Form
     {
-        public frmInscripcion()
+        public frmInscripcionNS()
         {
             InitializeComponent();
         }
@@ -35,38 +35,36 @@ namespace ClubDeportivo
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtDNI.Text = "";
-            cboEstado.Text = "";
             txtNombre.Focus();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "" || txtApellido.Text == "" || txtDNI.Text == "" || cboEstado.Text == "")
+            if (txtNombre.Text == "" || txtApellido.Text == "" || txtDNI.Text == "")
             {
                 MessageBox.Show("Debe completar datos requeridos (*)", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 string respuesta;
-                E_Socio socio = new E_Socio();
-                socio.Nombre = txtNombre.Text;
-                socio.Apellido = txtApellido.Text;
-                socio.DNI = Convert.ToInt32(txtDNI.Text);
-                socio.Estado = cboEstado.Text;
-                socio.FechaNac = dtpFechaDeNacimiento.Value;
-                socio.FechaInsc = dtpFechaDeInscripcion.Value;
-                socio.EntregoAptoFisico = chkEntregoAptoFisico.Checked;
+                E_NoSocio noSocio = new E_NoSocio();
+                noSocio.Nombre = txtNombre.Text;
+                noSocio.Apellido = txtApellido.Text;
+                noSocio.DNI = Convert.ToInt32(txtDNI.Text);
+                noSocio.FechaNac = dtpFechaDeNacimiento.Value;
+                noSocio.FechaInsc = dtpFechaDeInscripcion.Value;
+                noSocio.EntregoAptoFisico = chkEntregoAptoFisico.Checked;
 
 
 
-                Datos.Clientes datosSocios = new Datos.Clientes();
-                respuesta = datosSocios.Registrar(socio);
+                Datos.Clientes datosNoSocios = new Datos.Clientes();
+                respuesta = datosNoSocios.Registrar(noSocio);
                 bool esnumero = int.TryParse(respuesta, out int codigo);
                 if (esnumero)
                 {
                     if (codigo == 1)
                     {
-                        MessageBox.Show("SOCIO YA EXISTE", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("NO SOCIO YA EXISTE", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -86,10 +84,11 @@ namespace ClubDeportivo
         }
 
         // Esto es para fijar la fecha de inscripción al día actual 
-        private void frmInscripcion_Load(object sender, EventArgs e)
+        private void frmInscripcionNS_Load(object sender, EventArgs e)
         {
             dtpFechaDeInscripcion.Value = DateTime.Now;
             dtpFechaDeInscripcion.Enabled = false;
+
         }
     }
 }

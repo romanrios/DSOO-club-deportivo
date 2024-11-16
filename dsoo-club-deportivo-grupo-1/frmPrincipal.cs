@@ -39,6 +39,13 @@ namespace ClubDeportivo
             this.Hide();
         }
 
+        private void btnRegistrarNoSocio_Click(object sender, EventArgs e)
+        {
+            frmInscripcionNS inscripcion = new frmInscripcionNS();
+            inscripcion.Show();
+            this.Hide();
+        }
+
         private void btnPagoCuota_Click(object sender, EventArgs e)
         {
             frmPagar frmPagar = new frmPagar();
@@ -46,5 +53,18 @@ namespace ClubDeportivo
             this.Hide();
         }
 
+        private void btnListarVencimientosHoy_Click(object sender, EventArgs e)
+        {
+            frmVencimientos vencimientos = new frmVencimientos();
+            vencimientos.Show();
+            this.Hide();
+        }
+
+        private void btnEntregarCarnet_Click(object sender, EventArgs e)
+        {
+            frmCarnet carnet = new frmCarnet();
+            carnet.Show();
+            this.Hide();
+        }
     }
 }
