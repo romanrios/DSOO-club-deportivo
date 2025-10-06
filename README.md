@@ -41,11 +41,11 @@ Permite optimizar la administración de clientes y el registro de pagos de un **
 
 **Comisión A - Grupo N° 1**
 
-- Daniel Ignacio Córdoba  
-- Mariela Belén Gimenez  
-- Cecilia Daniela Gómez  
-- Eugenia Lucchelli  
-- Román Ríos
+- Córdoba, Daniel Ignacio
+- Giménez, Mariela Belén
+- Gómez, Cecilia Daniela
+- Lucchelli, Eugenia
+- Ríos, Román
 
 ---
 
