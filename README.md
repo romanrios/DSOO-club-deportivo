@@ -1,38 +1,58 @@
 # DSOO - Club Deportivo
 
-Instituto de Formación Técnica Superior Nº 29 - Año 2024
+**Proyecto Integrador – Desarrollo de Sistemas Orientados a Objetos**
 
-**Proyecto Integrador - Desarrollo de Software Orientado a Objetos**
+<img width="1366" height="768" alt="Pantalla del sistema" src="https://github.com/user-attachments/assets/f3f8abb8-7f7e-47d8-9c08-9d5f0c29e0d2" />
 
-## Comisión A - Grupo N° 1:
- 
-- Córdoba, Daniel Ignacio
-- Gimenez, Mariela Belén
-- Gómez, Cecilia Daniela
-- Lucchelli, Eugenia
-- Ríos, Román
+---
 
 ## Descripción
 
-Este trabajo tiene como objetivo analizar el funcionamiento de un club deportivo para luego desarrollar un sistema de gestión integral en C# utilizando Visual Studio. El sistema buscará optimizar la administración de clientes y el registro de pagos.
+Sistema de gestión integral desarrollado en **C#** utilizando **Visual Studio**.  
+Permite optimizar la administración de clientes y el registro de pagos de un **Club Deportivo**, ofreciendo una experiencia eficiente y centralizada para el personal administrativo.
 
-A través de esta práctica, se abordarán conceptos fundamentales de la programación orientada a objetos, permitiendo identificar las clases, atributos y relaciones clave dentro del dominio del problema. Este análisis no solo sienta las bases para el desarrollo del proyecto integrador, sino que también fomenta habilidades de documentación y planificación, esenciales para enfrentar los desafíos de un proyecto real.
+---
 
-Con este enfoque, se busca no solo cumplir con los requerimientos académicos, sino también simular el proceso profesional de creación de un sistema que responda a necesidades específicas de un cliente.
+## Tecnologías
 
+- **Framework:** .NET 8.0  
+- **Lenguaje:** C#  
+- **IDE:** Visual Studio  
+- **Base de datos:** MySQL alojada en **Aiven**
 
-## Especificaciones
-- .NET versión 8.0
+---
 
-## Instrucciones para Clonar el Repositorio
+## Instrucciones para ejecutar el proyecto
 
-Para clonar el repositorio en tu máquina local, sigue estos pasos:
+1. **Clonar el repositorio** en tu máquina local:  
+   ```bash
+   git clone https://github.com/romanrios/DSOO-club-deportivo.git
+   ```
+2. **Abrir el proyecto** con Visual Studio.  
+3. **Restaurar las dependencias** si no se cargan automáticamente:  
+   - Menú: `Herramientas → Administrador de paquetes NuGet → Restaurar paquetes`  
+4. **Ejecutar el proyecto**:  
+   - Presiona `Ctrl + F5` o haz clic en **Iniciar sin depurar**.  
+   - Verifica tener instalada la versión compatible de **.NET** y acceso a la **base de datos MySQL** configurada.
 
-1. Abre **Visual Studio** y ve a la pantalla de **Inicio**.
-2. En **Tareas iniciales**, selecciona **Clonar un repositorio**.
-3. Completa los campos:
-   - **Ubicación del repositorio**: `https://github.com/romanrios/DSOO-club-deportivo.git`
-   - **Ruta de acceso**: Elige una carpeta donde quieras guardar el proyecto.
-4. Haz clic en **Clonar**.
+---
 
-El proyecto se abrirá y las dependencias se instalarán automáticamente.
+## Equipo
+
+**Comisión A - Grupo N° 1**
+
+- Daniel Ignacio Córdoba  
+- Mariela Belén Gimenez  
+- Cecilia Daniela Gómez  
+- Eugenia Lucchelli  
+- Román Ríos
+
+---
+
+**Instituto de Formación Técnica Superior Nº 29**
+
+Carrera: Tecnicatura Superior en Desarrollo de Software
+
+Materia: Desarrollo de Sistemas Orientados a Objetos 
+
+Año 2024
