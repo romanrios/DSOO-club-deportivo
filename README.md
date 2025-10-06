@@ -55,4 +55,4 @@ Carrera: Tecnicatura Superior en Desarrollo de Software
 
 Materia: Desarrollo de Sistemas Orientados a Objetos 
 
-Año 2024
+Año 2025
