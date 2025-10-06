@@ -1,6 +1,6 @@
 # DSOO - Club Deportivo
 
-**Proyecto Integrador – Desarrollo de Sistemas Orientados a Objetos**
+**Desarrollo de Sistemas Orientados a Objetos** | Proyecto Integrador
 
 <img width="1366" height="768" alt="Pantalla del sistema" src="https://github.com/user-attachments/assets/f3f8abb8-7f7e-47d8-9c08-9d5f0c29e0d2" />
 
